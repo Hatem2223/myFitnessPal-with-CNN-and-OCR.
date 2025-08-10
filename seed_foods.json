@@ -1,0 +1,57 @@
+[
+  {
+    "name": "Chicken breast, cooked",
+    "brand": null,
+    "serving_size_g": 100,
+    "calories": 165,
+    "protein_g": 31,
+    "carbs_g": 0,
+    "fat_g": 3.6,
+    "fiber_g": 0,
+    "sodium_mg": 74
+  },
+  {
+    "name": "Basmati rice, cooked",
+    "brand": null,
+    "serving_size_g": 100,
+    "calories": 130,
+    "protein_g": 2.7,
+    "carbs_g": 28,
+    "fat_g": 0.3,
+    "fiber_g": 0.4,
+    "sodium_mg": 1
+  },
+  {
+    "name": "Whole egg",
+    "brand": null,
+    "serving_size_g": 50,
+    "calories": 72,
+    "protein_g": 6.3,
+    "carbs_g": 0.4,
+    "fat_g": 4.8,
+    "fiber_g": 0,
+    "sodium_mg": 71
+  },
+  {
+    "name": "Cucumber, raw",
+    "brand": null,
+    "serving_size_g": 100,
+    "calories": 15,
+    "protein_g": 0.7,
+    "carbs_g": 3.6,
+    "fat_g": 0.1,
+    "fiber_g": 0.5,
+    "sodium_mg": 2
+  },
+  {
+    "name": "Olive oil",
+    "brand": null,
+    "serving_size_g": 14,
+    "calories": 119,
+    "protein_g": 0,
+    "carbs_g": 0,
+    "fat_g": 13.5,
+    "fiber_g": 0,
+    "sodium_mg": 0
+  }
+]
