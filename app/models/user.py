@@ -2,7 +2,7 @@ import enum
 from datetime import datetime
 from sqlalchemy import func
 from werkzeug.security import gen_salt
-from passlib.hash import bcrypt
+from passlib.hash import pbkdf2_sha256
 
 from ..extensions import db
 
@@ -36,11 +36,11 @@ class User(db.Model):
     external_ref = db.Column(db.String(64), unique=True, default=lambda: gen_salt(16))
 
     def set_password(self, password: str) -> None:
-        self.password_hash = bcrypt.hash(password)
+        self.password_hash = pbkdf2_sha256.hash(password)
 
     def check_password(self, password: str) -> bool:
         try:
-            return bcrypt.verify(password, self.password_hash)
+            return pbkdf2_sha256.verify(password, self.password_hash)
         except Exception:
             return False
 
