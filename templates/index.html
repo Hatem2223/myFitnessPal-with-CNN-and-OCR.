@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Student Registration CRM System for Malaysia">
+    <title>Student CRM - Dashboard</title>
+    <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body>
+    <!-- Skip to main content for accessibility -->
+    <a href="#mainContent" class="skip-link">Skip to main content</a>
+    
+    <div class="app-container">
+        <!-- Sidebar Navigation -->
+        <nav class="sidebar" role="navigation" aria-label="Main navigation">
+            <div class="sidebar-header">
+                <h1>Student CRM</h1>
+            </div>
+            
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link active" data-page="dashboard" aria-label="Dashboard">
+                        <span class="nav-icon" aria-hidden="true">📊</span>
+                        <span>Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="students" aria-label="Students">
+                        <span class="nav-icon" aria-hidden="true">👥</span>
+                        <span>Students</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="documents" aria-label="Documents">
+                        <span class="nav-icon" aria-hidden="true">📄</span>
+                        <span>Documents</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="logistics" aria-label="Logistics">
+                        <span class="nav-icon" aria-hidden="true">🚐</span>
+                        <span>Logistics</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="notifications" aria-label="Notifications">
+                        <span class="nav-icon" aria-hidden="true">🔔</span>
+                        <span>Notifications</span>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link" data-page="settings" aria-label="Settings">
+                        <span class="nav-icon" aria-hidden="true">⚙️</span>
+                        <span>Settings</span>
+                    </a>
+                </li>
+            </ul>
+            
+            <div class="sidebar-footer">
+                <button id="logoutBtn" class="btn btn-secondary" style="width: 100%;">
+                    Logout
+                </button>
+            </div>
+        </nav>
+        
+        <!-- Main Content Area -->
+        <main id="mainContent" class="main-content" role="main">
+            <!-- Content loaded dynamically via JavaScript -->
+            <div style="display: flex; justify-content: center; align-items: center; height: 100vh;">
+                <div class="spinner" role="status">
+                    <span class="sr-only">Loading...</span>
+                </div>
+            </div>
+        </main>
+    </div>
+    
+    <script src="/static/js/app.js"></script>
+</body>
+</html>
