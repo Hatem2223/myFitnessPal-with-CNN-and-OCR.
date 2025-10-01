@@ -10,7 +10,13 @@ from app.services.audit import AuditService
 import subprocess
 import os
 from datetime import datetime
-import boto3
+
+# Optional: boto3 for S3 backup
+try:
+    import boto3
+    HAS_BOTO3 = True
+except ImportError:
+    HAS_BOTO3 = False
 
 bp = Blueprint('backup', __name__, url_prefix='/api/backup')
 
@@ -253,6 +259,10 @@ def delete_backup(current_user, backup_id):
 
 def upload_to_s3(filepath, filename):
     """Upload backup to S3"""
+    if not HAS_BOTO3:
+        print("boto3 not installed, skipping S3 upload")
+        return None
+    
     try:
         s3_client = boto3.client(
             's3',
@@ -276,6 +286,10 @@ def upload_to_s3(filepath, filename):
 
 def download_from_s3(s3_url):
     """Download backup from S3"""
+    if not HAS_BOTO3:
+        print("boto3 not installed")
+        return None
+    
     try:
         # Parse S3 URL
         parts = s3_url.replace('s3://', '').split('/', 1)

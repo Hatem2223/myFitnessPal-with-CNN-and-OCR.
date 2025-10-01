@@ -3,6 +3,7 @@ Student Registration CRM System - Main Entry Point
 Run this file to start the application
 """
 from app import create_app
+from flask import render_template_string, send_from_directory
 import os
 
 app = create_app()
@@ -10,12 +11,14 @@ app = create_app()
 @app.route('/')
 def index():
     """Serve the main application page"""
-    return app.send_static_file('../templates/index.html')
+    with open('templates/index.html', 'r') as f:
+        return render_template_string(f.read())
 
 @app.route('/login.html')
 def login():
     """Serve the login page"""
-    return app.send_static_file('../templates/login.html')
+    with open('templates/login.html', 'r') as f:
+        return render_template_string(f.read())
 
 if __name__ == '__main__':
     host = os.getenv('FLASK_HOST', '0.0.0.0')
