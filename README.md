@@ -1,3 +1,49 @@
+## Student Registration CRM (Malaysia)
+
+Prerequisites:
+- Python 3.13
+- PostgreSQL 14+
+
+Setup:
+1. Copy env and edit:
+   ```bash
+   cp .env.example .env
+   ```
+2. Ensure a database exists and `DATABASE_URL` points to it.
+3. (If venv unavailable) install requirements with override:
+   ```bash
+   python3 -m pip install --break-system-packages -r requirements.txt
+   ```
+   Preferably, create a venv if allowed.
+4. Initialize DB:
+   ```bash
+   flask --app run.py db init
+   flask --app run.py db migrate -m "init"
+   flask --app run.py db upgrade
+   ```
+5. Seed super admin:
+   ```bash
+   flask --app run.py seed-admin --email admin@example.com --password admin123
+   ```
+6. Run app:
+   ```bash
+   python3 run.py
+   ```
+
+Key endpoints:
+- `GET /api/health` health check
+- `POST /api/auth/login` (HttpOnly cookies)
+- `POST /api/auth/refresh`
+- `GET /api/auth/me`
+- `GET/POST /api/students`
+- `GET /api/dashboard/kpis`
+
+Security:
+- JWT in HttpOnly cookies, CSRF protected
+- AES-256-GCM encryption at rest for document blobs via `CryptoManager`
+
+Notes:
+- For local development without S3, files are stored under `STORAGE_DIR`.
 # MyFitnessPal with CNN and OCR
 
 This project is a fitness tracking application that leverages Convolutional Neural Networks (CNN) and Optical Character Recognition (OCR) to analyze and process fitness-related data. Built with FastAPI, it provides a robust backend for handling user data, image processing, and machine learning tasks.
